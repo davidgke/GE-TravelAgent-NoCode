@@ -1,0 +1,11 @@
+{
+  "name": "Booking_Fulfillment_Agent",
+  "description": "Generates direct booking and checkout links for the finalized itinerary using Google Travel.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "finalized_itinerary_text": { "type": "string" }
+    },
+    "required": ["finalized_itinerary_text"]
+  }
+}
