@@ -1,0 +1,14 @@
+{
+  "name": "Recommendations_Agent",
+  "description": "Provides highly-rated recommendations for attractions, dining, and experiences.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "destination": { "type": "string" },
+      "trip_theme": { "type": "string" },
+      "number_of_people": { "type": "integer" },
+      "activities_budget_allocation": { "type": "string" }
+    },
+    "required": ["destination", "number_of_people", "activities_budget_allocation"]
+  }
+}
