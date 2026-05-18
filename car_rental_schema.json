@@ -1,0 +1,14 @@
+{
+  "name": "Car_Rental_Agent",
+  "description": "Finds competitive car rental options based on location and dates.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "location": { "type": "string" },
+      "pickup_date": { "type": "string" },
+      "dropoff_date": { "type": "string" },
+      "number_of_people": { "type": "integer" }
+    },
+    "required": ["location", "pickup_date", "dropoff_date", "number_of_people"]
+  }
+}
