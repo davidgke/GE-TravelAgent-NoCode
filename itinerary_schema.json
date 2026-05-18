@@ -1,0 +1,15 @@
+{
+  "name": "Itinerary_Document_Agent",
+  "description": "Creates a structured travel itinerary document based on finalized bookings.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "trip_overview": { "type": "string" },
+      "flight_details": { "type": "string" },
+      "lodging_details": { "type": "string" },
+      "car_rental_details": { "type": "string" },
+      "planned_activities": { "type": "string" }
+    },
+    "required": ["trip_overview", "flight_details", "lodging_details", "planned_activities"]
+  }
+}
