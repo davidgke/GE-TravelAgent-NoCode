@@ -1,5 +1,28 @@
 # GE-TravelAgent-NoCode
-An agent that interactively gathers trip details from the user, including trip purpose, theme, budget, and number of people, to assist in planning, and then delegates to specialized subagents for flights, car rentals, lodgings, itinerary generation, recommendations, and calendar integration.
+# Multi-Agent Travel Planner System ✈️🌎
+
+A highly structured, multi-agent AI system designed to orchestrate end-to-end travel planning. This project utilizes a **Main Orchestrator Agent** that delegates tasks to specialized **Subagents**, ensuring strict context-passing, budget adherence, and high-quality API-ready outputs.
+
+## 🏗 Architecture (Orchestrator-Worker Pattern)
+This system is designed to prevent the "customer service loop" (where AI repeatedly asks for the same information). 
+1. **Phase 1: Information Gathering** (Purpose, Theme, Budget)
+2. **Phase 2: Planning & Delegation** (Flights, Lodgings, Cars, Recommendations)
+3. **Phase 3: Finalization & Execution** (Itinerary Doc, Calendar, Booking Fulfillment)
+
+The Main Agent extracts context from the conversation and injects it into the `parameters` of the Subagent tools. The Subagents execute their specific tasks (using tools like SerpApi Google Flights or Google Travel) and return structured data.
+
+## 🚀 How to Use
+1. **Agent Platforms:** These prompts and JSON schemas are platform-agnostic. You can deploy them on Google Cloud Vertex AI, OpenAI Custom GPTs/Assistants API, LangChain, or AutoGen.
+2. **Prompts:** Upload the markdown files in the `/prompts` directory as the "System Instructions" for each respective agent.
+3. **Schemas:** Use the JSON files in the `/schemas` directory to define the "Function Calling" or "Tools" parameters for the Main Agent.
+4. **External APIs:** For the Flight, Lodgings, Car Rental, and Recommendations agents, connect a Web Search Tool or specific APIs (like SerpApi Google Flights) to enable live data fetching.
+
+## 🧠 Key Features
+* **Strict Context Passing:** Subagents are forbidden from asking the user for information the Main Agent already knows.
+* **Smart Budget Slicing:** The Budget Agent breaks the total budget into categories (e.g., Lodging Allocation, Flight Allocation).
+* **Social Proof Validation:** Recommendations and Lodgings strictly require active Google Reviews (4.0+ stars).
+* **Frictionless Handoffs:** Generates direct, pre-filled checkout links to Google Travel for fast booking without compromising PII security.
+
 travel-planner-agents/
 │
 ├── README.md
