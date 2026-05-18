@@ -1,0 +1,16 @@
+{
+  "name": "Flight_Tracker_Agent",
+  "description": "Searches for optimal flight options based on gathered trip details.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "origin": { "type": "string" },
+      "destination": { "type": "string" },
+      "departure_date": { "type": "string", "description": "YYYY-MM-DD" },
+      "return_date": { "type": "string", "description": "YYYY-MM-DD" },
+      "number_of_people": { "type": "integer" },
+      "flight_budget_allocation": { "type": "string" }
+    },
+    "required": ["origin", "destination", "departure_date", "number_of_people", "flight_budget_allocation"]
+  }
+}
