@@ -1,0 +1,16 @@
+{
+  "name": "Lodgings_Subagent",
+  "description": "Finds suitable lodging options based on trip criteria and budget.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "destination": { "type": "string" },
+      "check_in_date": { "type": "string" },
+      "check_out_date": { "type": "string" },
+      "number_of_people": { "type": "integer" },
+      "lodging_budget_allocation": { "type": "string" },
+      "trip_theme": { "type": "string" }
+    },
+    "required": ["destination", "check_in_date", "check_out_date", "number_of_people", "lodging_budget_allocation"]
+  }
+}
