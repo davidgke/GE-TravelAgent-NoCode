@@ -1,0 +1,13 @@
+{
+  "name": "Calendar_Integration_Agent",
+  "description": "Parses finalized itinerary events to structure them for calendar integration.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "finalized_itinerary_text": { "type": "string" },
+      "user_timezone": { "type": "string" },
+      "destination_timezone": { "type": "string" }
+    },
+    "required": ["finalized_itinerary_text", "user_timezone", "destination_timezone"]
+  }
+}
